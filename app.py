@@ -87,3 +87,24 @@ if st.button("Predict sales", type="primary"):
         st.info("A normal day is expected.")
     else:
         st.info("A slow day: consider a promotion, or order less.")
+
+# 4. Provide rainfall-specific recommendations
+st.subheader("🌧️ Rainfall Impact")
+
+if rainfall >= 0.50:
+    st.warning(
+        "Significant rainfall is forecasted. "
+        "Rain could reduce customer foot traffic, even on warm days. "
+        "Consider adjusting inventory or offering promotions."
+    )
+elif rainfall >= 0.10:
+    st.info(
+        "Noticeable rainfall is forecasted. "
+        "Monitor expected demand and consider promotions "
+        "to encourage customer visits."
+    )
+else:
+    st.success(
+        "Little or no rainfall is forecasted. "
+        "Rain is unlikely to be a major concern for today's sales."
+    )
