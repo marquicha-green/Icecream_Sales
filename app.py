@@ -43,7 +43,7 @@ selected_date = st.date_input(
     "Date",
     value=date.today() + timedelta(days=1),
     min_value=date.today(),
-    max_value=date.today() + timedelta(days=16),    # the forecast reaches about 16 days ahead
+    max_value=date.today() + timedelta(days=15),    # the forecast reaches about 16 days ahead
 )
 
 if st.button("Predict sales", type="primary"):
@@ -57,6 +57,7 @@ if st.button("Predict sales", type="primary"):
             "daily": "temperature_2m_max,precipitation_sum",
             "temperature_unit": "fahrenheit",
             "timezone": "auto",
+            "forecast_days: 16,
             "start_date": str(selected_date),
             "end_date": str(selected_date),
         },
