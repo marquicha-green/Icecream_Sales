@@ -57,7 +57,6 @@ if st.button("Predict sales", type="primary"):
             "daily": "temperature_2m_max,precipitation_sum",
             "temperature_unit": "fahrenheit",
             "timezone": "auto",
-            "forecast_days": 16,
             "start_date": str(selected_date),
             "end_date": str(selected_date),
         },
